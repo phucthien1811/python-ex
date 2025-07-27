@@ -15,3 +15,4 @@ def bellman_ford(edges, V, start):
 
 edges = [(0, 1, 4), (0, 2, 5), (1, 2, -3), (2, 3, 4)]
 print(bellman_ford(edges, 4, 0))  # Output: [0, 4, 1, 5]
+z

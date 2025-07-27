@@ -1,3 +1,5 @@
+
+
 class BIT:
     def __init__(self, n):
         self.tree = [0]*(n+1)
