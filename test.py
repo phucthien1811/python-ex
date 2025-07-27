@@ -250,12 +250,20 @@ for char in s :
     s = s.replace(char, char.upper(), 1)
 print(s)  # In ra: PHuC THIeN
 print("--------------------------------------------------------------------------------------")
-numbers = [11, 33, 55, 39, 55, 75, 37, 21, 23, 41, 13]
-no = int(input('Enter a number: '))
-for num in numbers:
-    if num == no:
-        print('Number found in list')
-        break
-else:
-    print('Number not found in list')
+#
 print("--------------------------------------------------------------------------------------")
+# Định nghĩa hàm
+def greet(name):
+    print(f"Hello, {name}!")
+
+# Gọi hàm
+greet("Alice")
+
+print("--------------------------------------------------------------------------------------")
+def modify_list(lst):
+    lst.append(4)
+    print("Bên trong hàm:", lst)
+
+my_list = [1, 2, 3]
+modify_list(my_list)
+print("Bên ngoài hàm:", my_list) 
