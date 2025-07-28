@@ -267,3 +267,9 @@ def modify_list(lst):
 my_list = [1, 2, 3]
 modify_list(my_list)
 print("Bên ngoài hàm:", my_list) 
+
+print("--------------------------------------------------------------------------------------")
+def sum(a, b):
+    print("sum = " + str(a + b))
+sum(5, 10)  # In ra: sum = 15
+print(tpye(sum))  # In ra: <class 'function'>
