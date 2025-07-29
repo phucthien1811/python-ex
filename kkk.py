@@ -1,2 +1,1 @@
-print("Xin chào")
-a = 5 + 7
+phuc thien dep trai
