@@ -1,7 +1,9 @@
-file =  open('kkk.py')
+# Ghi vào file
+with open('kkk.py', 'w') as file:
+    file.write('phuc thien dep trai')
 
-data = file.read()
+# Đọc lại file vừa ghi
+with open('kkk.py', 'r') as file:
+    data = file.read()
 
-file.close()
-
-print(data)
+print(data)  # In ra nội dung đã ghi
