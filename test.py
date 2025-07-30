@@ -1,15 +1,21 @@
-class Foo:
-    name = 'Foo'
-    def getName(self):
-        print("Class: Foo")
+class First:
+    def getFirst(self):
+        print("Class Fist")
         
-class Bar(Foo):
-    name = 'Bar'
-    def getName(self):
-        print("Atribute name = " + super().name)
-        super().getName()
+class Second:
+    def getSecond(self):
+        print("Class Second")
 
-Bar().getName()
-# Ket qua:
-# Atribute name = Foo
-# Class: Foo
+class Third(First, Second):
+    def getThird(self):
+        print("Class Third")
+
+third = Third()
+third.getFirst()
+third.getSecond()
+third.getThird()
+
+# Kết Quả:
+# Class Fist
+# Class Second
+# Class Thirds
