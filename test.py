@@ -1,21 +1,17 @@
 class First:
-    def getFirst(self):
+    def getClass(self):
         print("Class Fist")
-        
-class Second:
-    def getSecond(self):
-        print("Class Second")
 
+class Second:
+    def getClass(self):
+        print("Class Second")
+        
 class Third(First, Second):
-    def getThird(self):
-        print("Class Third")
+    def getClass(self):
+        super().getClass()
 
 third = Third()
-third.getFirst()
-third.getSecond()
-third.getThird()
+third.getClass()
 
 # Kết Quả:
 # Class Fist
-# Class Second
-# Class Thirds
