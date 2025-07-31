@@ -10,3 +10,15 @@ class PersonAbstact(ABC):
     @abstractmethod
     def getFull(self):
         pass
+
+class Person(PersonAbstact):
+    name = 'Vu Thanh Tai'
+    age = 22
+    def getFull(self):
+        self.getName()
+        self.getAge()
+
+Person().getFull();
+# Kết Quả:
+# Vu Thanh Tai
+# 22
