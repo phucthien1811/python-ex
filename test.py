@@ -7,3 +7,6 @@ class PersonAbstact(ABC):
         print(self.name)
     def getAge(self):
         print(self.age)
+    @abstractmethod
+    def getFull(self):
+        pass
