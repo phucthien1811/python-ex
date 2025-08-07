@@ -20,5 +20,4 @@ def has_cycle(graph):
                 return True
     return False
 
-g = {0: [1], 1: [2], 2: [0]}  # Có chu trình
-print(has_cycle(g))  # True
+
