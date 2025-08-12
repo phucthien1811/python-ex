@@ -1,7 +1,8 @@
+#Nhap so A tu ban phim va chuyen sang kieu so thuc
+soA = float(input())
 
+#Nhap so B tu ban phim va chuyen sang kieu so nguyen
+soB = int(input())
 
-try:
-    soThapPhan = int(giaTri)
-    print('Số thập phân %d trong hệ bát phân là %o' % (soThapPhan, soThapPhan))
-except:
-    print("Định dạng đầu vào không hợp lệ!")
+#Dung ham format de dinh dang chuoi dau ra
+print('{0:.{1}f}'.format(soA, soB))
