@@ -1,6 +1,7 @@
-#Nhap gia tri {Ten cua ban}
-ten = input()
 
-#Xuat cau voi dinh dang theo yeu cau de bai
-#Tham so sep='--' giup ngan cach cac tu boi '--'
-print('Xin', 'chao!', 'Toi', 'ten', 'la', ten, sep='--')
+
+try:
+    soThapPhan = int(giaTri)
+    print('Số thập phân %d trong hệ bát phân là %o' % (soThapPhan, soThapPhan))
+except:
+    print("Định dạng đầu vào không hợp lệ!")
