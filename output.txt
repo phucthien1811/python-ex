@@ -1,1 +1,2 @@
-The sum of the numbers is: 11
+chu vi: 6.28
+dien tich: 12.56
