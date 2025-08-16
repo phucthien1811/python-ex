@@ -1,17 +1,14 @@
-def get_line(filename, line_number):
-    with open(filename, "r", encoding="utf-8") as f:
-        for i, line in enumerate(f, start=1):  # enumerate đếm từ 1
-            if i == line_number:
-                return line.strip()   # trả về đúng dòng
-    return None  # nếu không có dòng này
+with open("testfile.txt", "r") as f:
+    lines = f.readlines()
 
-# Nhập số lần cần đọc
-n = int(input("Nhập vào số dòng muốn đọc: "))
-
-for i in range(n):
-    y = int(input(f"Nhập vào số thứ tự dòng muốn đọc lần {i+1}: "))
-    line = get_line("DanhSachHS.txt", y)
-    if line is not None:
-        print(f"Nội dung dòng {y}: {line}")
-    else:
-        print("File không có dòng này")
+line1 = lines[0].strip()
+print(line1)   # lấy dòng 1
+print(type(line1))  # kiểm tra kiểu dữ liệu của dòng 1
+numbers = line1.split()  
+print(type(numbers))  # kiểm tra kiểu dữ liệu của numbers
+print(numbers)  # ???  bước này sẽ ra gì
+nums = list(map(int, numbers))
+print(nums)
+print(type(nums))  # ???  thử in ra xem
+total = sum(nums)          # ???  cuối cùng ta có gì
+print('tong cua minh la: ',total)
