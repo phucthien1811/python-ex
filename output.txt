@@ -1,2 +1,1 @@
-chu vi: 6.28
-dien tich: 12.56
+2 4
