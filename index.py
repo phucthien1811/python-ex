@@ -1,2 +1,2 @@
 f = open("Testfile.txt",'r')
-print(f.read())
+print(f.read(7))
