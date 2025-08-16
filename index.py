@@ -1,18 +1,14 @@
 with open("testfile.txt", "r") as f:
     lines = f.readlines()
+line1 = lines[0].strip()
+numbers = line1.split()
+nums = map(int, numbers)
+total = sum(nums)
 
-n = lines[0].strip()
+with open("output.txt", "w") as f1:
+    f1.write(f"The sum of the numbers is: {total}\n")
+   
 
-n = int(n)  # Convert the first line to an integer
-
-if n < 0:
-    print('dữ liệu trong file ko hợp lệ')
-else :
-   for i in range(1,n+1):
-       numbers = lines[i].split()    # ???  bước này sẽ ra gì
-       a , b = map(int, numbers)  # ???  thử in ra xem
-       print(f'tích của hàng {i} là {a*b}')
-       
              
     
    
