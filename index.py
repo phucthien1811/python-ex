@@ -1,3 +1,4 @@
+import statistics
 # Đọc file input
 with open("testfile.txt", "r") as f:
     lines = f.readlines()
@@ -9,10 +10,10 @@ N = int(lines[0].strip())
 numbers = list(map(int, lines[1].strip().split()))
 
 # Lọc số chẵn
-even_numbers = [str(num) for num in numbers if num % 2 == 0]
-print(even_numbers)
-print(type(even_numbers))
+even_numbers = [num for num in numbers if num > 0]
+avg = statistics.mean(even_numbers)
 
 # Ghi file output
 with open("output.txt", "w") as f:
-    f.write(" ".join(even_numbers))
+     f.write(str(avg))
+   
