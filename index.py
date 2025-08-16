@@ -1,14 +1,9 @@
 f = open("Testfile.txt",'r')
 print('nhập vào dòng muốn đọc: ')
-x = int(input())
+n = int(input())
 lines = f.readlines()
-i =0 
-while i < x:
-    print('nhập vào số dòng muốn đọc:')
-    y = int(input())
-    i= i + 1 
-    
-
+for i in range(n):
+    y = int(input(f"Nhập vào số thứ tự dòng muốn đọc lần {i+1}: "))
     if 1 <= y <=len(lines):
        print(lines[y-1])
     else:
