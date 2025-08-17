@@ -1,20 +1,11 @@
-# Nhập dòng k cần lấy
-k = int(input("Nhập số nguyên k (dòng cần lấy): "))
+# Đọc file input
+with open("testfile.txt", "r", encoding="utf-8") as f:
+    data = f.read()          # đọc toàn bộ nội dung
+    words = data.splitlines()  # tách thành danh sách các từ (theo dòng)
 
-# Đọc toàn bộ file input
-with open("TBCINP4.txt", "r") as f:
-    lines = f.readlines()
+# Ghép các từ thành 1 câu
+sentence = " ".join(words)
 
-# Kiểm tra k có hợp lệ không
-if 1 <= k <= len(lines):
-    # Lấy đúng dòng thứ k
-    line = lines[k-1].strip()   # vì list tính từ 0
-    numbers = list(map(int, line.split()))
-    avg = sum(numbers) / len(numbers)
-
-    # Ghi ra file output
-    with open("TBCOUT4.txt", "w") as f:
-        f.write(str(avg) + "\n")
-    print("Đã ghi kết quả vào TBCOUT4.txt")
-else:
-    print("Dòng thứ", k, "không tồn tại trong file!")
+# Ghi ra file output
+with open("output.txt", "w", encoding="utf-8") as f:
+    f.write(sentence)
