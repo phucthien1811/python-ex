@@ -1,11 +1,30 @@
-# Đọc file input
-with open("testfile.txt", "r", encoding="utf-8") as f:
-    data = f.read()          # đọc toàn bộ nội dung
-    words = data.splitlines()  # tách thành danh sách các từ (theo dòng)
+a, b, c = input('Nhập vào phép tính: ').split()
 
-# Ghép các từ thành 1 câu
-sentence = " ".join(words)
+a = float(a)
+c = float(c)
 
-# Ghi ra file output
-with open("output.txt", "w", encoding="utf-8") as f:
-    f.write(sentence)
+if b == '+':
+    print(a + c)
+elif b == '-':
+    print(a - c)
+elif b == '*':
+    print(a * c)
+elif b == '/':
+    if c != 0:
+        print(a / c)
+    else:
+        print("Lỗi: Không thể chia cho 0")
+elif b == '**':
+    print(a ** c)
+elif b == '%':
+    if c != 0:
+        print(a % c)
+    else:
+        print("Lỗi: Không thể chia cho 0")
+elif b == '//':
+    if c != 0:
+        print(a // c)
+    else:
+        print("Lỗi: Không thể chia cho 0")
+else:
+    print("Phép toán không hợp lệ")
