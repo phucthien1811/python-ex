@@ -1,16 +1,30 @@
-a = int(input('nhaap vao a: '))
-b= int (input('nhap vao b: '))
-if a < 2:
-    print('khong co so nguyen to')
-if  a == 2:
-    print('2 la so nguyen to')
-for i in range(3,b+1):
-    if i % 2 == 0:
-        continue
-    elif i > 2 :
-        for j in range(3,i,2):
-            if i % j == 0:
-                break
-        else:
-            if i >= a:
-                print(i,'la so nguyen to')
+import math
+
+#Khoi lenh co the phat sinh loi
+try:
+   #Nhap hai so tu ban phim
+   #Ep kieu du lieu sang so nguyen
+   a = int(input())
+   b = int(input())
+  
+   #Su dung cau truc re nhanh xu ly cac truong hop
+   if a < 0 or b < 0:
+       print("Vui long nhap so tu nhien!")
+   elif a > b:
+       print("So thu nhat lon hon so thu hai!")
+   else:
+       #Su dung vong lap for duyet cac so tu a den b
+       for i in range(a, b + 1):
+           if i > 1:       
+               #Su dung vong lap for de duyet cac so tu 2 den can bac hai cua i
+               for j in range(2, int(math.sqrt(i))+1):
+                   #Kiem tra tinh chia het
+                   if i % j == 0:
+                       #Thoat vong lap
+                       break
+               #Neu khong thoat vong lap thi khoi lenh else se duoc thuc hien
+               else:
+                   print(i, end=' ')
+#Khoi lenh duoc thuc thi khi loi xay ra
+except:
+   print("Dinh dang dau vao khong hop le!")
