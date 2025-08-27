@@ -1,45 +1,47 @@
+import math
+
 #Dinh nghia ham
-def cong(soHangThuNhat, soHangThuHai):
-   return soHangThuNhat + soHangThuHai
+def giai_pt_bac_nhat(a, b):
+   if a == 0:
+       if b == 0:
+           return "Phuong trinh co vo so nghiem"
+       return "Phuong trinh vo nghiem"
+   return "Phuong trinh co mot nghiem duy nhat: \nx = {}".format(-b / a)
 
-def tru(soBiTru, soTru):
-   return soBiTru - soTru
-
-def nhan(thuaSoThuNhat, thuaSoThuHai):
-   return thuaSoThuNhat * thuaSoThuHai
-
-def chia(soBiChia, soChia):
-   if soChia == 0:
-       return "ChiaCho0"
-   return soBiChia / soChia
-
-def may_tinh(soThuNhat, soThuHai, phepTinh):
-   if phepTinh == '+':
-       return cong(soThuNhat, soThuHai)
-   if phepTinh == '-':
-       return tru(soThuNhat, soThuHai)
-   if phepTinh == 'x':
-       return nhan(soThuNhat, soThuHai)
-   if phepTinh == ':':
-       return chia(soThuNhat, soThuHai)
+def giai_pt_bac_hai(a, b, c):
+   if a == 0:
+       return giai_pt_bac_nhat(b, c)
+   #Tinh delta
+   delta = b * b - 4 * a * c
+   #Kiem tra cac truong hop cua delta
+   if delta > 0:
+       x1 = float((-b + math.sqrt(delta)) / (2 * a))
+       x2 = float((-b - math.sqrt(delta)) / (2 * a))
+       return "Phuong trinh co hai nghiem phan biet la: \nx1 = {} \nx2 = {}".format(x1, x2)
+   if delta == 0:
+       x = -b / (2 * a)
+       return "Phuong trinh co nghiem kep: \nx1 = x2 = {}".format(x)
+   return "Phuong trinh vo nghiem"
 
 #Khoi lenh co the phat sinh loi
 try:
-   #Nhap bieu thuc tu ban phim
-   soThu1, phepTinh, soThu2 = input().split()
+   #Doc dong du lieu dau tien
+   chucNang = input()
   
-   #Ep kieu du lieu sang so thuc
-   soThu1 = float(soThu1)
-   soThu2 = float(soThu2)
-
-   #Goi thuc thi ham va truyen cac tham so cho ham
-   ketQua = may_tinh(soThu1, soThu2, phepTinh)
-
-   if ketQua == "ChiaCho0":
-       print("So chia phai khac 0!")
+   #Truong hop 1: Giai phuong trinh bac nhat
+   if chucNang == '1':
+       #Doc dong du lieu thu hai
+       #Ep kieu du lieu sang so thuc
+       a, b = map(float, input().split())
+       #Goi ham giai phuong trinh bac nhat
+       print(giai_pt_bac_nhat(a, b))
+   #Truong hop 2: Giai phuong trinh bac hai
+   elif chucNang == '2':
+       a, b, c = map(float, input().split())
+       print(giai_pt_bac_hai(a, b, c))
    else:
-       #In ra man hinh bieu thuc va ket qua
-       print("{} {} {} = {}".format(soThu1, phepTinh, soThu2, ketQua))   
+       print("Vui long chon mot trong hai chuc nang:\n1. Giai phuong trinh bac nhat\n2. Giai phuong trinh bac hai")
+
 #Khoi lenh duoc thuc thi khi loi xay ra
 except:
    print("Dinh dang dau vao khong hop le!")
