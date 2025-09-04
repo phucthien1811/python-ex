@@ -1,15 +1,14 @@
-def sohoanthien(n):
-    tong = 0
-    for i in range(1, n):
-        if n % i == 0:
-            tong+=i
-    if tong == n:
-        return "{} là số hoàn thiện ".format(n)
-    else :
-        return "{} không phải là số hoàn thiện".format(n)
+def liet_ke_so_hoan_thien(n):
+    ket_qua = []
+    for num in range(2, n+1):   # duyệt từ 2 đến n
+        tong = 0
+        for i in range(1, num):
+            if num % i == 0:
+                tong += i
+        if tong == num:
+            ket_qua.append(num)
+    return ket_qua
 
-
-n = int(input('Nhập vào số N: '))
-
-ketqua = sohoanthien(n)
-print(ketqua)
+# Ví dụ chạy
+n = 10000
+print(f"Các số hoàn thiện <= {n}: {liet_ke_so_hoan_thien(n)}")
